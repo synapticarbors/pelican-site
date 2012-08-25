@@ -1,0 +1,7 @@
+:slug: about
+
+Biography
+#########
+
+Colophon
+########

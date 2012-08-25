@@ -1,0 +1,19 @@
+{% extends "general.html" %}
+
+{% block main %}
+
+<h2>Notes</h2>
+
+{% for article in dates %}
+<div class="note-list">
+<ul>
+    <li>
+        <span class="date">{{ article.locale_date }} </span>
+        <span class="arrow">&raquo;</span>
+        <a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a>
+    </li>
+</ul>
+</div>    
+{% endfor %}
+
+{% endblock main %}

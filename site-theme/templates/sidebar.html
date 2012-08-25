@@ -1,0 +1,46 @@
+{% block collapsible_navbar %}
+<div class="top-menu navbar visible-phone">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </a>
+
+            <a class="brand" href="#"><span class="fname">joshua</span><span class="lname">adelman</span></a>
+
+            <div class="nav-collapse">
+                <ul class="nav">
+                {% for menu_item,menu_link in MENUITEMS -%}
+                    <li {% if menu_link == slug %} class="active"{% endif %}><a href="{{ menu_link }}"><h4>{{ menu_item }}</h4></a></li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock collapsible_navbar %}
+
+
+<div class="sidebar">
+    {% block protimg %}
+    <div class="protimg" id="banner"></div>
+    {% endblock protimg %}
+
+    {% block site_info %}
+    <div class="hidden-phone" id="site_owner">
+    <span class="fname">joshua</span><span class="lname">adelman</span>
+    <p>I am a computational biophysicist and postdoctoral scholar in the Department of Biological Sciences at the University of Pittsburgh.</p>
+    </div>
+    {% endblock site_info %}
+
+    {% block side_nav %}
+    <ul class="nav nav-pills nav-stacked sidebar-menu hidden-phone">
+    {% for menu_item,menu_link in MENUITEMS -%}
+        <li {% if menu_link == slug %} class="active"{% endif %}><a href="{{ menu_link }}"><h4>{{ menu_item }}</h4></a></li>
+    {% endfor %}
+    </ul>
+    {% endblock side_nav %}
+</div>
+

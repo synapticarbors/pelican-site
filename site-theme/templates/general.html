@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <section id="sidebar">
+            {% include "sidebar.html" %}
+            </section>
+        </div>
+        
+        <div class="span8">
+            <section id="main">
+            {% block main %}
+            {% endblock main %}
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+

@@ -1,0 +1,31 @@
+{% extends "general.html" %}
+
+{% block title %}Publications{% endblock %}
+
+{% block main %}
+
+<h2>Journal Articles</h2>
+
+<p>[ <a href="{{ GOOGLE_SCHOLAR }}">Google Scholar citations</a> ]</p>
+
+{% for pub in bibtex_entries | reverse %}
+<p>
+<strong>{{ pub.title }}</strong><br>
+{{ pub.authors|join(', ') }}<br>
+<em>{{ pub.journal }}</em> {{ pub.volume }}({{ pub.number }}): {{ pub.pages }} ({{ pub.year }})<br>
+{% if pub.shared %}
+<small><em>&#xFE61 These authors contributed equally to this work</em></small><br>
+{% endif %}
+[ <a data-toggle="collapse" data-target="#abstract-{{ pub.pmid }}">Abstract</a> 
+| <a href="http://dx.doi.org/{{ pub.doi }}">DOI</a> 
+| <a href="{{ SITEURL }}/theme/pubs/{{ pub.doi|replace("/","-") }}.pdf">Full text</a> ]<br>
+</p>
+
+<div id="abstract-{{ pub.pmid }}" class="collapse abstract">
+<p>{{ pub.abstract }}</p>
+</div>
+
+
+{% endfor %}
+
+{% endblock main %}

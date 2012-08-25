@@ -7,3 +7,7 @@ Thumbs.db
 
 *.pyc
 *.swp
+
+output
+custom_bootstrap/bootstrap
+

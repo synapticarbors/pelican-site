@@ -1,0 +1,95 @@
+.abstract {
+    border-left: 3px solid @blue;
+    margin-left: 12px;
+    padding-left: 5px;
+    text-align: justify;
+}
+
+.titlename {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.fname {
+    .titlename;
+    color: @blue;
+    padding-left: 10px;
+}
+
+.lname {
+    .titlename;
+    color: @textColor;
+}
+
+.protimg {}
+
+
+
+/* Sidebar style */
+.sidebar-menu {
+  -webkit-border-radius: 6px 6px 6px 6px;
+     -moz-border-radius: 6px 6px 6px 6px;
+          border-radius: 6px 6px 6px 6px;
+
+}
+
+.sidebar-menu > li > a {
+  -webkit-border-radius: 0px 0px 0 0;
+     -moz-border-radius: 0px 0px 0 0;
+          border-radius: 0px 0px 0 0;
+}
+
+.sidebar-menu > li:first-child > a {
+  -webkit-border-radius: 6px 6px 0 0;
+     -moz-border-radius: 6px 6px 0 0;
+          border-radius: 6px 6px 0 0;
+}
+
+.sidebar-menu > li:last-child > a {
+  -webkit-border-radius: 0 0 6px 6px;
+     -moz-border-radius: 0 0 6px 6px;
+          border-radius: 0 0 6px 6px;
+}
+
+.sidebar-menu > li > a:hover {
+    background-color: @base2;
+    color: darken(@blue,10%);
+}
+
+.note-list {
+    font-size: 16px;
+    li {
+        list-style-type: none;
+    }
+}
+
+section#main {
+}
+
+section#sidebar {
+    border-right: 1px solid @base1;
+    border-left: 1px solid @base1;
+    min-height: 768px;
+    height: 100%;
+    background-color: @base2;
+    position: fixed;
+    width: 21.97%;
+}
+
+@media (max-width: 767px) {
+    section#sidebar {
+        border-right: none;
+        border-left: none;
+        min-height: 0px;
+        background-color: @bodyBackground;
+        position: static;
+        width: auto;
+        top: 60px;
+    }
+}
+
+#site_owner > p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
